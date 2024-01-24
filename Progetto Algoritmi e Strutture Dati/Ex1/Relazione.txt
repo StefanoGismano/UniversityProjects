@@ -1,0 +1,64 @@
+Tempi di esecuzione su 1.000.000 di elementi:
+
+-k>=nitems (insertion sort puro)
+|Tipo    |Tempo di esecuzione|
+|String  |>10 minuti         |
+|Int     |>10 minuti         |
+|Double  |>10 minuti         |
+
+-k=100.000
+|Tipo    |Tempo di esecuzione|
+|String  |83.757 s           |
+|Int     |49.871 s           |
+|Double  |50.012 s           |
+ 
+-k=10.000
+|Tipo    |Tempo di esecuzione|
+|String  |6.654 s            |
+|Int     |6.581 s            |
+|Double  |6.516 s            |
+
+-k=1000
+|Tipo    |Tempo di esecuzione|
+|String  |1.287 s            |
+|Int     |1.139 s            |
+|Double  |1.198 s            |
+
+-k=100
+|Tipo    |Tempo di esecuzione|
+|String  |0.593 s            |
+|Int     |0.457 s            |
+|Double  |0.467 s            |
+
+-k=10
+|Tipo    |Tempo di esecuzione|
+|String  |0.569 s            |
+|Int     |0.411 s            |
+|Double  |0.424 s            |
+
+-k=0 (merge sort puro)
+|Tipo    |Tempo di esecuzione|
+|String  |0.657 s            |
+|Int     |0.504 s            |
+|Double  |0.526 s            |
+
+Notiamo che per k molto grande, i tempi di esecuzione sono molto alti.
+In particolare per k>=nitems, l'algoritmo usato è sempre l'insertion sort,
+il quale ha complessità quadratica, quindi i tempi di esecuzione crescono esponenzialmente
+all'aumentare del numero di elementi nell'array da ordinare.
+Al diminuire di k, il tempo di eseccuzione diminuisce drasticamente,
+in quanto il merge sort, che ha complessità O(N*logN) ed è molto più efficiente dell'insertion sort,
+viene utilizzato sempre di più.
+Il tempo di esecuzione minimo tra quelli testati si raggiunge con un k=10.
+Il tempo di esecuzione cresce poi leggermente quando k=0, cioè quando l'algoritmo si comporta
+come un merge sort puro. 
+Questo comportamento è conforme a quanto ci si aspettava: il tempo di esecuzione diminuisce
+quando k è basso, in quanto per array corti l'insertion sort è più efficiente rispetto al merge sort,
+e poi cresce all'aumentare di k, cioè al crescere della dimensione delle sottoliste ordinate 
+usando l'insertion sort.
+Notiamo inoltre che il tempo di esecuzione varia a seconda del tipo di dato da ordinare.
+L'ordinamento basato sulle stringhe è sempre più lento rispetto a quello basato sugli int o sui float,
+i quali invece hanno tempi di esecuzione simili tra loro, con gli int leggermente più veloci 
+dei float nella maggior parte dei test eseguiti.
+E' importante notare che l'hardware su cui si fa girare il programma contribuisce in modo
+importante ai tempi di esecuzione dello stesso.

@@ -1,0 +1,4 @@
+/*questo è
+un commento */
+((1+7)-2)*(32/16)
+// commento

@@ -1,0 +1,17 @@
+Tempi di esecuzione:
+
+- Per max_height == 8
+    - Inserimento: 29.16 s
+    - Ricerca: 0.005 s
+
+- Per max_height == 14
+    - Inserimento: 1.52 s
+    - Ricerca: 0.00024 s
+
+- Per max_height == 20
+    - Inserimento: 1.37 s
+    - Ricerca: 0.00021 s
+
+Aumentare ulteriormente il valore di max_height non produce miglioramenti significativi,
+pur aumentando la quantità di risorse utilizzate.
+E' necessario notare che i valori ottenuti cambiano anche in base all'hardware utilizzato.
